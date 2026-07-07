@@ -24,7 +24,7 @@ export default function ScrollRail({ active }) {
               className={`text-[11px] font-medium uppercase tracking-[0.18em] transition-all duration-300 ${
                 isActive
                   ? 'text-white'
-                  : 'hidden text-white/40 group-hover:inline group-hover:text-white/80 xl:inline'
+                  : 'hidden text-white/55 group-hover:inline group-hover:text-white/80 xl:inline'
               }`}
             >
               {s.label}

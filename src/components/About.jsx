@@ -92,7 +92,7 @@ export default function About() {
             <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-sky-500/20 blur-3xl" />
 
             <div className="relative flex items-center justify-between">
-              <span className="text-xs tracking-[0.25em] uppercase text-white/40">Engineer</span>
+              <span className="text-xs tracking-[0.25em] uppercase text-white/55">Engineer</span>
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             </div>
 
@@ -114,7 +114,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative text-[11px] text-white/40 flex justify-between">
+            <div className="relative text-[11px] text-white/55 flex justify-between">
               <span>DP-700 · DP-600</span>
               <span>SnowPro · AWS</span>
             </div>

@@ -30,7 +30,7 @@ function ScrollIndicator({ play }) {
       initial={play ? { opacity: 0 } : false}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.4, duration: 1 }}
-      className="absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2 text-white/40"
+      className="absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2 text-white/55"
     >
       <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
       <span className="relative w-5 h-8 rounded-full border border-white/20 flex justify-center pt-1.5">
@@ -82,7 +82,7 @@ export default function Hero() {
             </span>
             <div>
               <div className="text-sm text-white/85 whitespace-nowrap">{c.label}</div>
-              <div className="text-[10px] text-white/40 whitespace-nowrap">{c.sub}</div>
+              <div className="text-[10px] text-white/55 whitespace-nowrap">{c.sub}</div>
             </div>
           </div>
         ))}

@@ -141,7 +141,7 @@ export default function Contact() {
                     <I className="w-5 h-5" strokeWidth={1.75} />
                   </span>
                   <span className="relative min-w-0 flex-1">
-                    <span className="block text-[10px] uppercase tracking-widest text-white/40">
+                    <span className="block text-[10px] uppercase tracking-widest text-white/55">
                       {s.label}
                     </span>
                     <span className="block text-sm text-white/80 truncate group-hover:text-white transition-colors">
@@ -158,7 +158,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/35">
+        <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/55">
           <span>© {new Date().getFullYear()} {profile.name}. Crafted with React & Three.js.</span>
           <span>Designed & engineered for detail.</span>
         </footer>
