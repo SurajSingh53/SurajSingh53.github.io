@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, Database, Layers, Boxes, Zap } from 'lucide-react'
 import { profile } from '../data/content'
+import { shouldAnimateEntrance } from '../lib/prerender'
 import Magnetic from './Magnetic'
 
 const EASE = [0.22, 1, 0.36, 1]
@@ -21,11 +23,11 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE } },
 }
 
-function ScrollIndicator() {
+function ScrollIndicator({ play }) {
   return (
     <motion.a
       href="#about"
-      initial={{ opacity: 0 }}
+      initial={play ? { opacity: 0 } : false}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.4, duration: 1 }}
       className="absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2 text-white/40"
@@ -47,6 +49,11 @@ export default function Hero() {
   const py = useMotionValue(0)
   const gx = useSpring(useTransform(px, [-0.5, 0.5], [30, -30]), { stiffness: 50, damping: 20 })
   const gy = useSpring(useTransform(py, [-0.5, 0.5], [30, -30]), { stiffness: 50, damping: 20 })
+
+  // Only play the entrance animation on a fresh (non-prerendered) client load.
+  // When the HTML was pre-rendered the content is already painted, so we render
+  // it in its settled state to avoid a flash and keep hydration in sync.
+  const [play] = useState(() => shouldAnimateEntrance())
 
   const handleMove = (e) => {
     px.set(e.clientX / window.innerWidth - 0.5)
@@ -83,7 +90,7 @@ export default function Hero() {
 
       <motion.div
         variants={container}
-        initial="hidden"
+        initial={play ? 'hidden' : false}
         animate="visible"
         className="container-x relative z-10"
       >
@@ -104,6 +111,7 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
+          aria-label={profile.name}
           className="font-display font-semibold tracking-tight leading-[1.05] text-[16vw] sm:text-[13vw] md:text-[9.5vw] pb-2"
         >
           <span className="block text-white">{profile.firstName}</span>
@@ -143,7 +151,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      <ScrollIndicator />
+      <ScrollIndicator play={play} />
     </section>
   )
 }

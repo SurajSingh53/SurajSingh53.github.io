@@ -102,6 +102,9 @@ export default function About() {
                   src="/portrait.jpg"
                   alt={profile.name}
                   loading="lazy"
+                  decoding="async"
+                  width={128}
+                  height={128}
                   className="h-full w-full object-cover"
                 />
               </div>

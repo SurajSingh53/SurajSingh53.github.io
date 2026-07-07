@@ -1,0 +1,15 @@
+{
+  "name": "Suraj Singh — Data Engineer",
+  "short_name": "Suraj Singh",
+  "description": "Data Engineer building cloud-native Lakehouse and ETL pipelines on Microsoft Fabric, Azure, Snowflake, Databricks and PySpark.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05060a",
+  "theme_color": "#05060a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
